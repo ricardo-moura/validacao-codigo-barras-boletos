@@ -1,23 +1,22 @@
 
-# Validações código de barras boleto / guia de arreacadação
+# Validação de digito verificador boleto e guia de arrecadação
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 
-Este código foi implementado para validação de código de barras de boletos de cobranças e boletos de arrecadação de concessionárias de água, luz e telefone.
+A implementação proposta nesse repo validam o digito verificador do código de barras tando de boletos como o de guia de arrecadação (Ex: Concessionárias de água, luz e telefone).
 
 ### Obs:
-Essa implementação trata de validar o digito verificador do código de barras, caso você precise validar o digito verificador da linha digitável do boleto recomendo implementar esse código: [https://github.com/Tagliatti/Boleto-Validator-PHP](https://github.com/Tagliatti/Boleto-Validator-PHP).
+Como o código de barras tem uma numeração diferente da linha digitável do boleto, caso você precise de uma validação específica para linha digitável recomendo utilizar o [Boleto-Validator-PHP](https://github.com/Tagliatti/Boleto-Validator-PHP) do [@Filipe Tagliatti](https://github.com/Tagliatti).
 
 # Exemplos de uso
 
-### Chamada validação digito verificador arrecadação
 ```php
 <?php
 require_once('barcodeValidator.php');
 
-$barcodeValido = validarDigitoVerificacaoBarcode("barcode") ;//44 posições
+$barcodeValido = validarDigitoVerificacaoBarcode("barcode"); //Cdigo de barra composto de 44 caracteres.
 
 if ($barcodeValido) {
     //barcode valido
